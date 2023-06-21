@@ -1,5 +1,6 @@
 'use client'
-import { useSession, signIn, signOut } from "next-auth/react"
+import { Button } from "@/components/ui/button"
+import { useSession, signOut } from "next-auth/react"
 import { useRouter } from 'next/navigation';
 
 export default function Page() {
@@ -32,13 +33,13 @@ export default function Page() {
             rel="noopener noreferrer"
           >
             <h2 className={`mb-3 text-2xl font-semibold`}>
-              Docs{' '}
+              <Button variant="outline" type="button" onClick={() => signOut()}/>
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
 		-&gt;
               </span>
             </h2>
             <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              Find in-depth information about Next.js features and API.
+              Sign out
             </p>
           </a>
 
